@@ -1,8 +1,8 @@
 class ClaudeState < Formula
   desc "Session state, handoff, and resume tooling for Claude Code"
   homepage "https://github.com/bansalbhunesh/claude-code-handoff"
-  url "https://github.com/bansalbhunesh/claude-code-handoff/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "ec173f70a82f5bc1b8cf2c2bd790d2afee2c9e63f5d55c222cd3cb200809b43d"
+  url "https://github.com/bansalbhunesh/claude-code-handoff/archive/refs/tags/v0.6.1.tar.gz"
+  sha256 "61e53a7385437adbd61467b95342ce3057da8756ae38fed6ee65de450a339bbb"
   license "MIT"
 
   depends_on "jq"
