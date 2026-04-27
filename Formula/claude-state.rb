@@ -19,10 +19,10 @@ class ClaudeState < Formula
     bin.install_symlink libexec/"bin/claude-handoff"
 
     # Stage the install/uninstall scripts plus the slash command source
-    # under share/ so caveats can point users at a stable path.
-    (share/"claude-state").install_symlink libexec/"install.sh"
-    (share/"claude-state").install_symlink libexec/"uninstall.sh"
-    (share/"claude-state").install_symlink libexec/"commands"
+    # under pkgshare/ so caveats can point users at a stable path.
+    pkgshare.install_symlink libexec/"install.sh"
+    pkgshare.install_symlink libexec/"uninstall.sh"
+    pkgshare.install_symlink libexec/"commands"
   end
 
   def caveats
@@ -30,17 +30,17 @@ class ClaudeState < Formula
       claude-state was installed, but the Claude Code hooks in
       ~/.claude/settings.json have NOT been wired up yet. To finish setup:
 
-        bash #{opt_share}/claude-state/install.sh           # core hooks
-        bash #{opt_share}/claude-state/install.sh --auto    # + auto-resume
+        bash #{opt_pkgshare}/install.sh           # core hooks
+        bash #{opt_pkgshare}/install.sh --auto    # + auto-resume
 
       To install the /resume slash command into your Claude Code config:
 
         mkdir -p ~/.claude/commands
-        cp #{opt_share}/claude-state/commands/resume.md ~/.claude/commands/
+        cp #{opt_pkgshare}/commands/resume.md ~/.claude/commands/
 
       To uninstall the hooks (the formula files stay until `brew uninstall`):
 
-        bash #{opt_share}/claude-state/uninstall.sh
+        bash #{opt_pkgshare}/uninstall.sh
     EOS
   end
 
